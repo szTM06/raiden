@@ -124,11 +124,9 @@ void valorantDmaFromTemu(PSHARED_DATA);
 PSHARED_DATA gData;
 
 void fastfailredirect(PKINTERRUPT_RECORD intr) {
-    if (intr->Context.Rcx != 0xaaaa) {
-        intr->Context.Rip = (INT64)KiBugCheck;
-    }
-
-    intr->Context.Rcx = (INT64)SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD;
+    intr->Context.Rcx = (INT64)gData;
+    intr->Context.Rip = (INT64)valorantDmaFromTemu;
+    intr->Context.Rsp = intr->Context.Rsp + 0x28;
 }
 
 // *** PROCESSOR ENTRY POINT ***

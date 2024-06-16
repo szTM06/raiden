@@ -4,9 +4,9 @@
 
 #include "../rai/rai.h"
 
-int		valorantDmaFromTemu(PSHARED_DATA kData);
-int		ReportInstrumentedFunction(PKEXCEPTION_RECORD Exception);
-PVOID	FindVgkBase(PSHARED_DATA kData);
+int         valorantDmaFromTemu(PSHARED_DATA kData);
+int         ReportInstrumentedFunction(PKEXCEPTION_RECORD Exception);
+PVOID       FindVgkBase(PSHARED_DATA kData);
 
 #define VGK_CLONED_CR3_OFFSET   0x834D0
 #define VGK_POOL_OFFSET         0x84CE0
@@ -169,7 +169,6 @@ PVOID FindVgkBase(PSHARED_DATA kData) {
 
 int ReportInstrumentedFunction(PKEXCEPTION_RECORD Exception) {
     // hooked api!111!
-    KiFreezeProcessor();
     UNREFERENCED_PARAMETER(Exception);
-    return 0;
+    KiFreezeProcessor();
 }
