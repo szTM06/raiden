@@ -96,7 +96,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT edog, PUNICODE_STRING xeuler) {
 // Entrypoint is called with pointer to Shared Data struct, gs register points to KPCR for the processor that executed AwiSetupSharedData (specifically the rdmsr)
 // ((so assume it is garbage, and could cause issues))
 // sse is enabled, avx is disabled, nx is enabled, lstar zero, assume idt and gdt are zero
-// kernel functions which are safe to call at IRQL >= DISPATCH_LEVEL mostly work. most kernel apis work (ie Mm Ob), but not all of them are tested
+// kernel functions which are safe to call at IRQL >= DISPATCH_LEVEL mostly** work. most kernel apis work (ie Mm Ob), but not all of them are tested
 // at this point any fault will kill it and your whole system, so dont write dumb code
 //
 void KiProcessorEntry(PSHARED_DATA Data) {
@@ -136,3 +136,7 @@ void ProcessorEntry(PSHARED_DATA Data) {
     KiRegisterInterruptCallback((INTERRUPT_CALLBACK)fastfailredirect, 0x29);
     __fastfail(0xaa11);
 }
+
+// ** i have no clue this is a giant guess, i havent tested all of them. MmMapIoSpaceEx and ExAllocatePool2 for example work
+// but im not sure about MmProbeAndLockPages
+// dpcs can be queued however
