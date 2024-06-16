@@ -139,7 +139,6 @@ NTSTATUS AwiSetupSharedData(PSHARED_DATA Data) {
 
 	Data->Ntoskrnl = ntoskrnl;
 	Data->RtlFindExportedRoutineByName = (pRtlFindExportedRoutineByName)fnRtlFindExportedRoutineByName;
-	//Data->KernelCr3 = __readcr3();		// TRIPLE FAULT LFG
 	Data->KernelCr3 = KernelEProcess[5];	// directory table base for system EPROCESS
 	Data->Kpcrb = __readmsr(0xC0000101);
 	return STATUS_SUCCESS;
