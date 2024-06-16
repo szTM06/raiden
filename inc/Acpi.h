@@ -13,12 +13,12 @@
 int					AcpiRootChecksum(PXSDP RootHdr);
 int					AcpiTableChecksum(ACPISDTHeader* tableHeader);
 
-NTSTATUS            AwiFindDirectMadt(PACPISDTHeader* Madt);
-NTSTATUS			AwiParseMadtForProcessors(PACPISDTHeader Madt);
-PHYSICAL_ADDRESS	AwiAcpiFindRootTable(PBIOS_DATA MappedBiosData);
+NTSTATUS          AwiFindDirectMadt(PACPISDTHeader* Madt);
+NTSTATUS          AwiParseMadtForProcessors(PACPISDTHeader Madt);
+PHYSICAL_ADDRESS  AwiAcpiFindRootTable(PBIOS_DATA MappedBiosData);
 
-PACPISDTHeader		AwFindTableBySignature(PXSDT RootSDT, char* signature);
-PXSDT				AwAcpiFindRootTable();
+PACPISDTHeader    AwFindTableBySignature(PXSDT RootSDT, char* signature);
+PXSDT             AwAcpiFindRootTable();
 
 // exports
-NTSTATUS            ZwQuerySystemInformation(INT64, PVOID, ULONG, PULONG);
+NTSTATUS          ZwQuerySystemInformation(INT64, PVOID, ULONG, PULONG);
