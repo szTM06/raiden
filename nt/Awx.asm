@@ -3,7 +3,7 @@
 CpuxGetCurrentApicId PROC
 	push rbx
 	mov eax, 01h	; what if my cpu doesnt support leaf 01h??????
-					; its ok the og nt gang didnt think this was possible i am just like them
+			; its ok the og nt gang didnt think this was possible i am just like them
 	cpuid
 	shr ebx, 24
 	mov eax, ebx
