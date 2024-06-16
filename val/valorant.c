@@ -73,7 +73,7 @@ int valorantDmaFromTemu(PSHARED_DATA kData) {
         Process = Process - 0x448;
     }
 	
-	// stall execution for 2 seconds, so our um application has a chance to initialise everything
+    // stall execution for 2 seconds, so our um application has a chance to initialise everything
     KiStallProcessor(2000000000);
 
     rcall.Complete = 0;
