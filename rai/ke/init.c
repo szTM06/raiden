@@ -199,8 +199,5 @@ NORETURN void KiReleaseProcessor() {
 		ExFreePool(Kprocessor);
 	}
 
-	for (;;) {
-		_disable();
-		__halt();
-	}
+	KiFreezeProcessor();
 }
