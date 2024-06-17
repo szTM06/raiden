@@ -62,7 +62,7 @@ NTSTATUS AwiSendGlobalNMI() {
 	INTERRUPT Interrupt = { 0 };
 	Interrupt.Low.u.DeliveryMode = 0b100;
 	Interrupt.Low.u.Destination = 0b11;
-	return AwiSendInterrupt(&Interrupt, 1);
+	return AwiSendInterrupt(&Interrupt, 0);
 }
 
 // send interrupt, only works with MMIO lapic
