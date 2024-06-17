@@ -1,9 +1,9 @@
-struc gdt_entry_struct
+struc gdt_entry_struct	; do i need this
 
-	limit_low:   resb 2
-	base_low:	resb 2
+	limit_low:	 resb 2
+	base_low:    resb 2
 	base_middle: resb 1
-	access:	  resb 1
+	access:      resb 1
 	granularity: resb 1
 	base_high:   resb 1
 
