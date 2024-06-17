@@ -161,7 +161,7 @@ PVOID FindVgkBase(PSHARED_DATA kData) {
         _mm_pause();
     }
 
-    KiSetIllegalDispatch(nt_HalpCollectPmcCounters);
+    KiSetIllegalDispatch(hkHalpCollectPmcCounters);
     KiRegisterExceptionCallback((EXCEPTION_CALLBACK)ReportInstrumentedFunction, X86_EXCEPT_DEBUG);
 
     return fnRtlPcToFileHeader(hkHalpCollectPmcCounters, &Module);
