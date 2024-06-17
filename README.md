@@ -12,3 +12,7 @@ Limitations:
 - youre not really supposed to do this so a lot of kernel apis dont work
 - you have to boot on less cores
 - your "thread" can still be caught via hooks
+
+bootstrap folder contains the code for bootstrapping the "woken" core, bringing it into the nt address space and calling the entry point.
+nt contains the nt side of the framework, enumerating cores, and handling IPIs.
+ke contains the code for controlling the woken core, contains interrupt and exception handlers, plus various QoL functions.
