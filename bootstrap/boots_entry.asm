@@ -1,6 +1,6 @@
 struc gdt_entry_struct	; do i need this
 
-	limit_low:	 resb 2
+	limit_low:   resb 2
 	base_low:    resb 2
 	base_middle: resb 1
 	access:      resb 1
