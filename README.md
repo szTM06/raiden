@@ -6,7 +6,7 @@ Features:
 - resumable exception and interrupt handlers
 - no hard to debug triple faults, unhandled exceptions trigger BSOD as expected for a standard NT driver
 - compatibility with various NT kernel APIs, with some limitations (>=DISPATCH_LEVEL, and not all work)
-- stable, tested on AMD and Intel, Win10 and Win11
+- stable, tested on AMD and Intel, Win 10 and Win 11
 
 Limitations:
 - youre not really supposed to do this so a lot of kernel apis dont work
