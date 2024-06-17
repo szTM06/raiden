@@ -28,16 +28,16 @@ typedef struct _SHARED_DATA {
     PVOID   CpuStackBase;
 } SHARED_DATA, * PSHARED_DATA;
 
-NTSTATUS			AwiSendGlobalNMI();
-NTSTATUS			AwiSendInterrupt(PINTERRUPT Interrupt, int DisableInterrupts);
-PLAPIC				AwiMapLapic();
-NTSTATUS			AwiStartProcessor(int CpuApic, CPU_BOOT_CONTEXT CpuContext, PCHAR CpuMappedRam);
-NTSTATUS			AwiMmAllocateMemory(PVOID* OutAddr, PMDL* OutMdl);
-NTSTATUS			AwiSetupSharedData(PSHARED_DATA Data);
+NTSTATUS	AwiSendGlobalNMI();
+NTSTATUS	AwiSendInterrupt(PINTERRUPT Interrupt, int DisableInterrupts);
+PLAPIC		AwiMapLapic();
+NTSTATUS	AwiStartProcessor(int CpuApic, CPU_BOOT_CONTEXT CpuContext, PCHAR CpuMappedRam);
+NTSTATUS	AwiMmAllocateMemory(PVOID* OutAddr, PMDL* OutMdl);
+NTSTATUS	AwiSetupSharedData(PSHARED_DATA Data);
 
-NTSTATUS			AwStartProcessor(PCPU_APIC WakeableCPU, CPU_BOOT_CONTEXT CpuContext, PCHAR CpuMappedRam);
-NTSTATUS			AwAllocateAwxMemory(PVOID* OutAddr, PMDL* OutMdl);
-NTSTATUS			AwSetupSharedData(PSHARED_DATA Data);
+NTSTATUS	AwStartProcessor(PCPU_APIC WakeableCPU, CPU_BOOT_CONTEXT CpuContext, PCHAR CpuMappedRam);
+NTSTATUS	AwAllocateAwxMemory(PVOID* OutAddr, PMDL* OutMdl);
+NTSTATUS	AwSetupSharedData(PSHARED_DATA Data);
 
 // external imports
 
