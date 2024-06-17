@@ -15,4 +15,4 @@ Limitations:
 
 the 'bootstrap' folder contains the code for bootstrapping the "woken" core, bringing it into the nt address space and calling the entry point.  
 the 'nt' folder contains the nt side of the framework, enumerating cores, and handling IPIs.  
-the 'ke' folder contains the code for controlling the woken core, contains interrupt and exception handlers, plus various QoL functions.  
+the 'rai' folder contains the code for controlling the woken core, contains interrupt and exception handlers, plus various QoL functions.  
