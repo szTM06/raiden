@@ -1,4 +1,5 @@
-Framework for running a normal NT driver on a seperate "isolated" core.
+Framework for running a normal NT driver on a separate "isolated" core.
+This core acts as a standard thread running at a raised IRQL.
 
 Limitations:
 - youre not really supposed to do this so a lot of kernel apis dont work
