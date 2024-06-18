@@ -103,7 +103,7 @@ void KiProcessorEntry(PSHARED_DATA Data) {
     SHARED_DATA kData = { 0 };
     memcpy(&kData, Data, sizeof(SHARED_DATA));
     _mm_mfence();
-    *(Data->CpuRunningFlag) = CPU_START_OK;
+    *(Data->CpuRunningFlag) = CPU_START_OK_NO_DEALLOCATE;
 
     // enable exception handling and interrupt handling
     KiInitialiseProcessor();
