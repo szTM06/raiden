@@ -21,7 +21,7 @@ void KiRemoteApcEntry(KAPC* Apc, PREMOTE_CALL rcall, PVOID SystemArgument1, PVOI
 
 /// erm what the sigma
 /// this is actually criminal, i have a function that does this but im too lazy to import it
-/// i wrote it in 5 minutes
+/// i wrote this in 5 minutes
 int KiCallVarArgFunction(RCALLTARGET target, PINT64 ArgArray, int ArgAmt) {
 	switch (ArgAmt) {
 	case 0:
