@@ -121,7 +121,7 @@ PACPISDTHeader AwFindTableBySignature(PXSDT RootSDT, char* signature) {
 	for (int i = 0; i < entries; i++) {
 		PHYSICAL_ADDRESS HdrPhysical = { 0 };
 		HdrPhysical.QuadPart = xsdt->PointerToOtherSDT[i];
-		//PACPISDTHeader Hdr = (PACPISDTHeader)(HdrPhysical + Offset);			// this assumes the header is near to the XSDT, it might not be in which case we have to map it
+		//PACPISDTHeader Hdr = (PACPISDTHeader)(HdrPhysical + Offset);		// this assumes the header is near to the XSDT, it might not be in which case we have to map it
 		PACPISDTHeader Hdr = MmMapIoSpace(HdrPhysical, 0x1000, MmNonCached);	// bugcheck on baremental. maybe i should read my comments
 		if (!memcmp(Hdr->Signature, signature, 4)) {
 			return Hdr;
